@@ -1,6 +1,7 @@
 
 
 const playListContainerTag = document.querySelector(".playListContainer");
+let currentandTotalTimeTag = document.querySelector(".currentandTotalTime")
 const nextButtonTag = document.querySelector(".nextButton");
 const previousButtonTag = document.querySelector(".previousButton");
 const pauseButtonTag = document.querySelector(".pauseButton");
@@ -25,15 +26,19 @@ for (let i = 0; i < tracks.length; i++) {
 	trackTag.textContent = title;
 	playListContainerTag.append(trackTag);
 }
-
+let durationText =" 00:00" ;
 audioTag.addEventListener("loadeddata", () => {
 	const duration = Math.floor(audioTag.duration);
-	createSecAndMin(duration)
+
+	durationText = createSecAndMin(duration)
+
 });
 
 audioTag.addEventListener("timeupdate", () => {
 	let currentTime = Math.floor(audioTag.currentTime);
-	createSecAndMin(currentTime)
+	let currentTimeText = createSecAndMin(currentTime);
+	let currentAndDurationText = currentTimeText + " / " + durationText;
+	currentandTotalTimeTag.textContent = currentAndDurationText
 });
 
 function createSecAndMin(sec) {
