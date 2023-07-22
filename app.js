@@ -2,15 +2,16 @@
 
 const playListContainerTag = document.querySelector(".playListContainer");
 let currentandTotalTimeTag = document.querySelector(".currentandTotalTime")
+let currentProgressTag = document.getElementById("currentProgress");
 const nextButtonTag = document.querySelector(".nextButton");
 const previousButtonTag = document.querySelector(".previousButton");
 const pauseButtonTag = document.querySelector(".pauseButton");
 const playButtonTag = document.querySelector(".playButton");
 const audioTag = document.querySelector(".audioTag");
 const tracks = [
-	{ trackId: "music/fdo.mp3", title: "Song 1" },
-	{ trackId: "music/fcc.mp3", title: "Song 2" },
-	{ trackId: "music/fdn.mp3", title: "Song 3" },
+	{ trackId: "music/water1.mp3", title: "Song 1" },
+	{ trackId: "music/water2.mp3", title: "Song 2" },
+	{ trackId: "music/water3.mp3", title: "Song 3" },
 	{ trackId: "music/fdx.mp3", title: "song 4" },
 ];
 
@@ -26,9 +27,10 @@ for (let i = 0; i < tracks.length; i++) {
 	trackTag.textContent = title;
 	playListContainerTag.append(trackTag);
 }
+let duration;
 let durationText =" 00:00" ;
 audioTag.addEventListener("loadeddata", () => {
-	const duration = Math.floor(audioTag.duration);
+	duration = Math.floor(audioTag.duration);
 
 	durationText = createSecAndMin(duration)
 
@@ -39,8 +41,12 @@ audioTag.addEventListener("timeupdate", () => {
 	let currentTimeText = createSecAndMin(currentTime);
 	let currentAndDurationText = currentTimeText + " / " + durationText;
 	currentandTotalTimeTag.textContent = currentAndDurationText
+	updateCurrentProgress(currentTime)
 });
-
+function updateCurrentProgress(currentTime) {
+	let currentProgressWidth = (25/duration) * currentTime;
+	currentProgressTag.style.width = currentProgressWidth.toString() + "em";
+}
 function createSecAndMin(sec) {
 	const minutes = Math.floor(sec / 60);
 	const seconds = sec % 60;
@@ -49,3 +55,4 @@ function createSecAndMin(sec) {
 	const minuteText = minutes < 10 ? "0" + minutes.toString() : minutes;
 	return minuteText + ":" + secText;
 }
+ 

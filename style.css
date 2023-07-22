@@ -27,8 +27,8 @@ width: 25em;
 height: .254em;
 background-color: rgb(180,170,170);
 }
-#currentProgres{
-width:0;
+#currentProgress{
+width:0em ; 
 height: 100%;
 background-color: rgb(255, 0, 0);
 }

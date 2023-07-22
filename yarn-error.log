@@ -1,0 +1,44 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\DELL Latitude 3400\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D eslint@latest
+
+PATH: 
+  C:\Users\DELL Latitude 3400\AppData\Local\npm-cache\_npx\abe235584debfe0e\node_modules\.bin;D:\Programming\Music player\node_modules\.bin;D:\Programming\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Users\DELL Latitude 3400\bin;D:\Programming\Git\mingw64\bin;D:\Programming\Git\usr\local\bin;D:\Programming\Git\usr\bin;D:\Programming\Git\usr\bin;D:\Programming\Git\mingw64\bin;D:\Programming\Git\usr\bin;C:\Users\DELL Latitude 3400\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet;C:\Program Files\nodejs;D:\Programming\Git\cmd;D:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\MongoDB\Server\6.0\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0;C:\Users\DELL Latitude 3400\AppData\Local\Android\Sdk;C:\Program Files\Java\jdk-20;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet;C:\Program Files\nodejs;D:\Programming\Git\cmd;D:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0;C:\Users\DELL Latitude 3400\AppData\Local\Microsoft\WindowsApps;C:\Users\DELL Latitude 3400\AppData\Roaming\npm;C:\Users\DELL Latitude 3400\AppData\Roaming\Composer\vendor\bin;D:\Programming\Microsoft VS Code\bin;C:\Users\DELL Latitude 3400\AppData\Local\Android\Sdk\platform-tools;C:\Users\DELL Latitude 3400\AppData\Local\Android\Sdk\bin;C:\Program Files\Google\Chrome\Application;D:\Programming\Git\usr\bin;D:\Programming\Git\usr\bin\vendor_perl;D:\Programming\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/eslint: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND 49994
+      at ClientRequest.onError (C:\Users\DELL Latitude 3400\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:152376:17)
+      at Object.onceWrapper (node:events:628:26)
+      at ClientRequest.emit (node:events:513:28)
+      at Socket.socketErrorListener (node:_http_client:502:9)
+      at Socket.emit (node:events:513:28)
+      at emitErrorNT (node:internal/streams/destroy:151:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "music-player",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
