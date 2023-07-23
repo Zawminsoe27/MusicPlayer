@@ -17,12 +17,8 @@ const tracks = [
 for (let i = 0; i < tracks.length; i++) {
 	const trackTag = document.createElement("div");
 	trackTag.addEventListener("click", () => {
-		const trackID = tracks[i].trackId;
-		audioTag.src = trackID;
-		isPlaying = true;
-		audioTag.play();
-		updatePlayAndPause();
 		currentPlayIndex = i;
+		return playMode()
 	});
 	trackTag.classList.add("trackItem");
 	const title = (i + 1).toString() + ". " + tracks[i].title;
@@ -102,20 +98,11 @@ previousButtonTag.addEventListener("click", () => {
 if(currentPlayIndex === 0) {
 	let preViousMusic = tracks.length-1;
 	currentPlayIndex = preViousMusic;
-	const wantToPlay = tracks[currentPlayIndex].trackId;
-	audioTag.src= wantToPlay;
-	audioTag.play();
-	isPlaying = true;
-	updatePlayAndPause()
-	return;
+	return playMode()
 // let	previousPlay = tracks.length-1;
 } else {
 	currentPlayIndex -= 1;
-	const wantToPlay = tracks[currentPlayIndex].trackId;
-	audioTag.src= wantToPlay;
-	audioTag.play();
-	isPlaying = true;
-	updatePlayAndPause()
+	return playMode()
 }
 
 })
@@ -124,17 +111,16 @@ nextButtonTag.addEventListener("click", () => {
 if(currentPlayIndex === tracks.length-1) {
 	let nextMusic = 0;
 	currentPlayIndex = nextMusic;
-	const wantToPlay = tracks[currentPlayIndex].trackId;
-	audioTag.src= wantToPlay;
-	audioTag.play();
-	isPlaying = true;
-	updatePlayAndPause();
-	return
+	return playMode()
 }
 currentPlayIndex +=1;
-const wantToPlay = tracks[currentPlayIndex].trackId;
-audioTag.src= wantToPlay;
+return playMode()
+})
+
+function playMode() {
+	const wantToPlay = tracks[currentPlayIndex].trackId;
+	audioTag.src= wantToPlay;
 audioTag.play();
 isPlaying = true;
 updatePlayAndPause()
-})
+}
