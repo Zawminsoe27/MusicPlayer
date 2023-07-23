@@ -21,6 +21,7 @@ user-select: none;
 
 .currentandTotalTime{
 	color: #fff;
+	user-select: none;
 }
 #progressBar{
 width: 25em;
@@ -31,6 +32,7 @@ background-color: rgb(180,170,170);
 width:0em ; 
 height: 100%;
 background-color: rgb(255, 0, 0);
+transition: all 1s;
 }
 .musicPlayer{
 	display: flex;
@@ -41,4 +43,7 @@ background-color: rgb(255, 0, 0);
 	margin: .9em 1.005em;
 	cursor: pointer;
 	font-size: 1.5em;
+}
+.pauseButton{
+	display: none;
 }
