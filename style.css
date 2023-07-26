@@ -2,23 +2,22 @@
 	display:flex ;
 	flex-direction: column;
 	align-items: center;
-	height: 100vh;
+	height: 98vh;
 	
 	justify-content: center;
 	background-color: rgba(0, 0, 0, 0.877);
 }
 .playListContainer{
-	margin-bottom: 6em;
+	margin-bottom: 2em;
 }
 .trackItem{
-color: rgb(255, 242, 64);
+color: rgb(232, 248, 13);
 font-size: 1em;
 border-bottom: .125em solid rgb(173, 162, 162);
 padding: .58em 0em;
 cursor: pointer;
 user-select: none;
 }
-
 .currentandTotalTime{
 	color: #fff;
 	user-select: none;
@@ -45,5 +44,4 @@ transition: all 1s;
 	font-size: 1.5em;
 }
 .pauseButton{
-	display: none;
 }

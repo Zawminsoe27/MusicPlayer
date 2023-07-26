@@ -18,14 +18,15 @@ for (let i = 0; i < tracks.length; i++) {
 	const trackTag = document.createElement("div");
 	trackTag.addEventListener("click", () => {
 		currentPlayIndex = i;
-		return playMode()
+
+		return playMode();
 	});
 	trackTag.classList.add("trackItem");
 	const title = (i + 1).toString() + ". " + tracks[i].title;
 	trackTag.textContent = title;
 	playListContainerTag.append(trackTag);
 }
- 
+
 let duration;
 let durationText = " 00:00";
 audioTag.addEventListener("loadeddata", () => {
@@ -95,32 +96,43 @@ function changeDisplay(tag, disMode) {
 }
 
 previousButtonTag.addEventListener("click", () => {
-if(currentPlayIndex === 0) {
-	let preViousMusic = tracks.length-1;
-	currentPlayIndex = preViousMusic;
-	return playMode()
-// let	previousPlay = tracks.length-1;
-} else {
-	currentPlayIndex -= 1;
-	return playMode()
-}
-
-})
+	if (currentPlayIndex === 0) {
+		let preViousMusic = tracks.length - 1;
+		currentPlayIndex = preViousMusic;
+		return playMode();
+		// let	previousPlay = tracks.length-1;
+	} else {
+		currentPlayIndex -= 1;
+		return playMode();
+	}
+});
 
 nextButtonTag.addEventListener("click", () => {
-if(currentPlayIndex === tracks.length-1) {
-	let nextMusic = 0;
-	currentPlayIndex = nextMusic;
-	return playMode()
-}
-currentPlayIndex +=1;
-return playMode()
-})
+	if (currentPlayIndex === tracks.length - 1) {
+		let nextMusic = 0;
+		currentPlayIndex = nextMusic;
+		return playMode();
+	}
+	currentPlayIndex += 1;
+	return playMode();
+});
 
 function playMode() {
 	const wantToPlay = tracks[currentPlayIndex].trackId;
-	audioTag.src= wantToPlay;
-audioTag.play();
-isPlaying = true;
-updatePlayAndPause()
+	const nameOfSong = tracks[currentPlayIndex].title;
+	audioTag.src = wantToPlay;
+
+	const trackTags = document.querySelectorAll(".trackItem");
+	for (let i = 0; i < trackTags.length; i++) {
+		if (i === currentPlayIndex) {
+			trackTags[i].classList.add("text-primary");
+		} else {
+			trackTags[i].classList.remove("text-primary");
+		}
+	}
+
+	audioTag.play();
+	isPlaying = true;
+	updatePlayAndPause();
+	console.log(nameOfSong);
 }
