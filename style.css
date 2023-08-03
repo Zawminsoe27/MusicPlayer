@@ -42,6 +42,11 @@ transition: all 1s;
 	margin: .9em 1.005em;
 	cursor: pointer;
 	font-size: 1.5em;
+	transition-duration: .5s;
 }
-.pauseButton{
+.controls:hover{
+	color: rgba(204, 191, 191, 0.767);
+font-size: 1.6em;
+transform: translateY(.2em);
+
 }
